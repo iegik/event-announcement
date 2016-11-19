@@ -1,0 +1,148 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+
+html {
+  height: 100%;
+  position: fixed;
+  width: 100%;
+}
+
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Futura PT Book', sans-serif;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+}
+
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+
+textarea {
+  resize: vertical;
+}
+
+
+.loading * {
+  transition: none !important;
+}
+
+
+.slides {
+  background: #000;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+
+
+.slide {
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  visibility: hidden;
+  width: 100%;
+}
+
+
+.button {
+  border: 3px solid #000;
+  color: #383838;
+  display: inline-block;
+  font-family: 'Futura PT Heavy', sans-serif;
+  .fluid-size(font-size, 14);
+  .fluid-size(line-height, 36);
+  .fluid-size(padding-top, 1);
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  vertical-align: top;
+  .fluid-size(width, 140);
+
+  & + & {
+    .fluid-size(margin-left, 14);
+  }
+
+  &.disabled {
+    cursor: default;
+    opacity: 0.3;
+  }
+}
+
+
+.input {
+  .placeholder(rgba(0, 0, 0, 0.5));
+  border-radius: 0;
+  border: none;
+  border-bottom: 2px solid #000;
+  color: rgba(0, 0, 0, 0.5);
+  display: block;
+  font-family: 'Benton Sans', sans-serif;
+  .fluid-size(font-size, 15);
+  font-weight: 500;
+  .fluid-size(height, 37);
+  outline: none;
+  text-align: center;
+  width: 100%;
+
+  &_email {
+    background: url('@{img-path}icon-email.png') left center / 15px auto no-repeat;
+  }
+}
+
+
+.logo {
+  .img-bg-fluid-2x('@{img-path}logo.png');
+  display: inline-block;
+  .fluid-size(left, 17);
+  position: absolute;
+  .fluid-size(top, 24);
+  z-index: 100;
+}
+
+
+.likes {
+  color: #fff;
+  font-size: 0;
+  position: absolute;
+  .fluid-size(right, 20);
+  .fluid-size(top, 25);
+  z-index: 100;
+
+  &__count {
+    display: inline-block;
+    .fluid-size(font-size, 14);
+    font-family: 'Benton Sans', sans-serif;
+    font-weight: 500;
+    .fluid-size(line-height, 23);
+    .fluid-size(margin-right, 29);
+  }
+
+  &__heart {
+    display: inline-block;
+    .fluid-size(height, 60);
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate3d(33%, -48%, 0);
+    .fluid-size(width, 60);
+  }
+}

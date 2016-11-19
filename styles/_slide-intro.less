@@ -1,0 +1,152 @@
+.intro {
+  transition: visibility 0s 0.85s;
+  z-index: 30;
+
+  .animation-intro-in & {
+    transition: none;
+    visibility: visible;
+  }
+
+  .animation-video-in & {
+    transition: visibility 0s 0.85s;
+    visibility: hidden;
+  }
+
+
+  &__logo {
+    opacity: 0;
+    transition: opacity 0.65s @bezier-std;
+
+    .animation-intro-in & {
+      opacity: 1;
+    }
+
+    .animation-video-in & {
+      opacity: 0;
+      transition: opacity 0.35s @bezier-std;
+    }
+  }
+
+
+  &__doors {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+
+  &__door-wrap {
+    height: 100%;
+    opacity: 0;
+    overflow: hidden;
+    perspective: 100vh;
+    position: absolute;
+    top: 0;
+    transition: opacity 0.85s @bezier-std, transform 0.85s @bezier-std;
+    width: 50%;
+
+    .animation-intro-in & {
+      opacity: 1;
+      transform: scale(1) translate3d(0, 0, 0);
+    }
+
+    &_left {
+      left: 0;
+      transform: scale(492 / 376) translate3d((-115 / @prototype-height * 100vh), 0, 0);
+
+      .animation-video-in & {
+        transform: translate3d((-25 / @prototype-height * 100vh), 0, 0);
+      }
+    }
+
+    &_right {
+      right: 0;
+      transform: scale(492 / 376) translate3d((115 / @prototype-height * 100vh), 0, 0);
+
+      .animation-video-in & {
+        transform: translate3d((25 / @prototype-height * 100vh), 0, 0);
+      }
+    }
+  }
+
+
+  &__door {
+    background: url('@{img-path}bg-intro.jpg') 0% 50% ~'/' 200% auto no-repeat;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    transition: transform 0.85s @bezier-std;
+    transform: rotateY(0);
+    width: 100%;
+
+    &_left {
+      background-position: 0% 50%;
+      left: 0;
+      transform-origin: left;
+
+      .animation-video-in & {
+        transform: rotateY(90deg);
+      }
+    }
+
+    &_right {
+      background-position: 100% 50%;
+      right: 0;
+      transform-origin: right;
+
+      .animation-video-in & {
+        transform: rotateY(-90deg);
+      }
+    }
+  }
+
+
+  &__content {
+    .fluid-size(bottom, 36);
+    color: #fff;
+    font-family: 'Futura PT Heavy', sans-serif;
+    .fluid-size(left, 20);
+    opacity: 0;
+    position: absolute;
+    transition: opacity 0.65s @bezier-std 0.35s;
+    width: 100%;
+
+    .animation-intro-in & {
+      opacity: 1;
+    }
+
+    .animation-video-in & {
+      opacity: 0;
+      transition: opacity 0.35s @bezier-std;
+    }
+  }
+
+
+  &__title {
+    display: block;
+    .fluid-size(font-size, 40);
+    .fluid-size(line-height, 36);
+    transform: translate3d(0, (1368 - 966) / 2 / @prototype-height * 100vh, 0);
+    transition: transform 0.85s @bezier-std;
+
+    .animation-intro-in & {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+
+  &__subtitle {
+    display: block;
+    .fluid-size(font-size, 14);
+    .fluid-size(margin-top, 21);
+    text-transform: uppercase;
+    transition: transform 0.85s @bezier-std;
+    transform: translate3d(0, (1698 - 1226) / 2 / @prototype-height * 100vh, 0);
+
+    .animation-intro-in & {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+}

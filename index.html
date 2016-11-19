@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>App</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="user-scalable=0, initial-scale=1, minimum-scale=1, maximum-scale=1, width=device-width">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+  </head>
+
+  <body ontouchstart class="">
+
+    <div style="height: 0; width: 0; position: absolute; visibility: hidden">
+      <svg xmlns="http://www.w3.org/2000/svg">
+        <symbol id="heart" viewBox="0 0 20 18">
+          <path d="M17.218 10.738c3.31-3.405 3.517-6.928 1.41-9.095-2.128-2.19-5.552-2.19-7.658 0-.394.405-.718.857-.972 1.333-.255-.476-.58-.928-.972-1.333-2.106-2.167-5.53-2.167-7.637 0-2.13 2.167-1.92 5.69 1.388 9.095l6.92 7.143c.068.072.184.12.3.12.116 0 .208-.048.3-.12l6.92-7.142z"></path>
+        </symbol>
+      </svg>
+    </div>
+
+
+    <!-- animation classes list
+      -- add .animation-splash-in to .app
+      -- wait 0.8s after end of animation then add .animation-intro-in to .app
+      -- wait 1s after end of animation then add .animation-video-in to .app
+      -- play video
+      -- click button then add .animation-cities-in to .app
+      -- when click .cities__city then add .active class to it and add .selected class to needed .notifier
+      -- wait 0.8s after end of animation then add .animation-notifier-in to .app
+      -- click button then add .animation-download-in to .app
+    -->
+    <div class="app slides">
+      <div class="slide slide_splash splash">
+        <div class="splash__content">
+          <div class="splash__logo"></div>
+          <div class="splash__title">Women’s Run Fest 2016</div>
+        </div>
+
+        <div class="splash__logo-powered-wrap">
+          <div class="splash__logo-powered"></div>
+        </div>
+      </div>
+
+
+
+      <div class="slide slide_intro intro">
+        <div class="logo intro__logo"></div>
+
+        <div class="intro__doors">
+          <div class="intro__door-wrap intro__door-wrap_left">
+            <div class="intro__door intro__door_left"></div>
+          </div>
+
+          <div class="intro__door-wrap intro__door-wrap_right">
+            <div class="intro__door intro__door_right"></div>
+          </div>
+        </div>
+
+
+        <div class="intro__content">
+          <div class="intro__title">
+            LUNA FIT<br>
+            Women's Run<br>
+            Fest 2016
+          </div>
+          <div class="intro__subtitle">Join The Fun</div>
+        </div>
+      </div>
+
+
+
+      <div class="slide slide_video video-card">
+        <div class="logo"></div>
+
+
+        <div class="likes">
+          <div class="likes__count">412</div>
+          <canvas class="likes__heart" width="120" height="120"></canvas>
+        </div>
+
+
+        <div class="video-card__video-wrap" style="background-image: url('media/img/bg-video.jpg');">
+          <video src="/" webkit-playsinline="" class="video-card__video"></video>
+        </div>
+
+        <div class="video-card__content-wrap">
+          <div class="video-card__title">Luna Fit Women’s Run Fest 2016</div>
+          <div class="video-card__content">
+            Unleash your inner athlete at Women's Run Fest 2016! Join LUNA FIT for exclusive road races, group fitness classes and inspiring cross-training sessions led by World-class trainers. Don't miss the most fun women's event in the nation! Check the tour schedule for cities and dates.
+          </div>
+          <div class="video-card__button-wrap">
+            <a href="#" class="button video-card__button">Find Your City</a>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="slide slide_cities cities">
+        
+      </div>
+
+
+
+
+      <div class="slide slide_notifiers notifiers">
+        <div class="notifier selected">
+          <div class="notifier__image" style="background-image: url('media/img/bg-notifier.jpg');"></div>
+
+          <div class="notifier__content-wrap">
+            <div class="notifier__title">San Francisco 2016</div>
+            <div class="notifier__content">
+              Registration opens in June. Sign up to be notified first, plus keep up to date on all the latest information on the Women’s Run Fest 2016.
+            </div>
+            <form class="notifier__form">
+              <input type="email" class="input input_email notifier__input" placeholder="Enter your email">
+              <a href="#" class="button notifier__button">Skip</a>
+              <a href="#" class="button disabled notifier__button">Notify me</a>
+            </form>
+          </div>
+        </div>
+
+
+        <div class="notifier">
+          <div class="notifier__image" style="background-image: url('media/img/bg-notifier.jpg');"></div>
+
+          <div class="notifier__content-wrap">
+            <div class="notifier__title">New York 2016</div>
+            <div class="notifier__content">
+              Registration opens in June. Sign up to be notified first, plus keep up to date on all the latest information on the Women’s Run Fest 2016.
+            </div>
+            <form class="notifier__form">
+              <input type="email" class="input input_email notifier__input" placeholder="Enter your email">
+              <a href="#" class="button notifier__button">Skip</a>
+              <a href="#" class="button disabled notifier__button">Notify me</a>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide slide_download download">
+        <div class="logo"></div>
+
+        <div class="download__content-wrap">
+          <div class="download__title">
+            Prep For<br>
+            The Fest!
+          </div>
+
+          <div class="download__content">
+            Start training today. Choose from our library of<br>
+            HIIT, pilates, yoga and running workouts.<br>
+            Download the RunFest app.
+          </div>
+
+          <a href="#" class="download__download-button"></a>
+        </div>
+      </div>
+    </div>
+
+
+
+    <script src="bundle.js"></script>
+  </body>
+</html>

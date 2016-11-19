@@ -1,0 +1,46 @@
+.download {
+  background: url('@{img-path}bg-download.jpg') center / cover no-repeat;
+  transform: translate3d(100%, 0, 0);
+  transition: transform 0.9s @bezier-3, visibility 0s 0.9s;
+  z-index: 50;
+
+  .animation-download-in & {
+    transition: transform 0.9s @bezier-3;
+    transform: translate3d(0, 0, 0);
+    visibility: visible;
+  }
+
+
+  &__content-wrap {
+    .fluid-percent-size(bottom, 35);
+    color: #fff;
+    text-align: center;
+    position: absolute;
+    width: 100%;
+  }
+
+
+  &__title {
+    font-family: 'Futura PT Heavy', sans-serif;
+    .fluid-size(font-size, 40);
+    .fluid-size(line-height, 36);
+    margin-bottom: 1px;
+    text-transform: uppercase;
+  }
+
+
+  &__content {
+    .has-text;
+    .fluid-size(font-size, 17);
+    .fluid-size(line-height, 21);
+    .fluid-size(margin-bottom, 44);
+  }
+
+
+  &__download-button {
+    .img-bg-fluid-2x('@{img-path}button-download-app-store.png');
+    color: inherit;
+    display: inline-block;
+    text-decoration: none;
+  }
+}

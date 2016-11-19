@@ -1,0 +1,11 @@
+@font-face {
+  font-family: 'BebasNeueBold';
+  src: url('BebasNeueBold.eot');
+  src: url('BebasNeueBold.woff2') format('woff2'),
+       url('BebasNeueBold.woff') format('woff'),
+       url('BebasNeueBold.ttf') format('truetype'),
+       url('BebasNeueBold.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+

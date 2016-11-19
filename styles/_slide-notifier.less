@@ -1,0 +1,112 @@
+.notifiers {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transition: visibility 0s 0.9s;
+  visibility: hidden;
+  width: 100%;
+  z-index: 10;
+
+  .animation-notifier-in & {
+    transition: none;
+    visibility: visible;
+    z-index: 40; 
+  }
+}
+
+
+.notifier {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transition: visibility 0s 0.9s;
+  visibility: hidden;
+  width: 100%;
+  z-index: 0;
+
+  &.selected {
+    z-index: 10;
+  }
+
+  .animation-notifier-in &.selected {
+    transition: none;
+    visibility: visible;
+  }
+
+  .animation-download-in &.selected {
+    transition: visibility 0s 0.9s;
+    visibility: hidden;
+  }
+
+
+  &__image {
+    background: center / cover no-repeat #000;
+    .fluid-percent-size(height, 298);
+    opacity: 0;
+    position: relative;
+    transition: opacity 0.9s @bezier-3;
+    width: 100%;
+
+    .animation-notifier-in & {
+      opacity: 1;
+    }
+  }
+
+
+  &__content-wrap {
+    background-color: rgba(255, 255, 255, 0);
+    display: flex;
+    flex-direction: column;
+    .fluid-percent-size(height, 667 - 298);
+    position: relative;
+    .fluid-size(padding-bottom, 40);
+    .fluid-size(padding-left, 25);
+    .fluid-size(padding-right, 25);
+    .fluid-size(padding-top, 40);
+    transform: translate3d(0, (1885 - 668) / 2 / @prototype-height * 100vh, 0);
+    transition: background 0.9s @bezier-3, transform 0.9s @bezier-3;
+
+    .animation-notifier-in & {
+      background-color: rgba(255, 255, 255, 1);
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+
+  &__title {
+    font-family: 'Bebas Neue', sans-serif;
+    flex-shrink: 0;
+    .fluid-size(font-size, 20);
+    font-weight: bold;
+    .fluid-size(margin-bottom, 30);
+  }
+
+
+  &__content {
+    .has-text;
+    color: #727272;
+    font-family: 'Futura PT Book', sans-serif;
+    .fluid-size(font-size, 16);
+    flex-grow: 1;
+    .fluid-size(line-height, 26);
+    overflow: auto;
+  }
+
+
+  &__form {
+    flex-shrink: 0;
+    .fluid-size(margin-top, 8);
+    text-align: center;
+  }
+
+
+  &__input {
+    .fluid-size(margin-bottom, 59);
+  }
+
+
+  &__button {
+  }
+}
